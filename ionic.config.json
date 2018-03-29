@@ -1,0 +1,8 @@
+{
+  "name": "guiarga",
+  "app_id": "285c2766",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
