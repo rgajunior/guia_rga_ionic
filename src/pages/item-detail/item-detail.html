@@ -1,0 +1,43 @@
+<ion-content>
+  <ion-card text-wrap>
+    <ion-item>
+      <h1 style="font-weight: bold;">{{item.name}}</h1>
+    </ion-item>
+    <hr>
+    <button *ngFor='let phone of item.phoneList' ion-item>
+      <ion-icon name="call" item-left class="call"></ion-icon>
+      <h2>{{phone}} </h2>
+    </button>
+    <hr>
+    <button ion-item>
+      <ion-icon name="pin" item-left class="pin"></ion-icon>
+      <h3>{{item.address}}</h3>
+    </button>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer >
+  <ion-toolbar color="primary">
+    <ion-grid >
+      <ion-row>
+        <ion-col col-4 text-left>
+          <button ion-button icon-only clear color="light">
+            <ion-icon name="share"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4 text-center>
+          <button ion-button icon-only clear color="light" (click)="onAddToFavorites(item)">
+            <ion-icon name="star"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4 text-right>
+          <button ion-button icon-only clear color="light" (click)="onDismiss()">
+            <ion-icon name="arrow-round-back"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+</ion-footer>

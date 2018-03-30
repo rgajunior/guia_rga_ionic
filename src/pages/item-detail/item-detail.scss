@@ -1,0 +1,23 @@
+page-item-detail {
+    .pin{
+        color: red;
+    }
+
+    .call{
+        color:green;
+    }
+
+    .fbotton{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        //height: 100px;
+        width: 100%;
+        background-color: #e6f7ff;
+    }
+
+    .fbutton{
+        padding:  0px !important;
+        margin: 0px !important;
+    }
+}
