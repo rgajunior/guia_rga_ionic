@@ -14,10 +14,11 @@
 
 <ion-footer>
   <ion-toolbar color="primary">
-    <ion-searchbar [(ngModel)]="searchInput" (ionInput)="onInput($event)" placeholder="Buscar" showCancelButton="true"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="searchInput" (keyup.enter)="onSearch($event)" placeholder="Buscar" showCancelButton="true"></ion-searchbar>
     <ion-buttons right>
       <button ion-button full icon-only (click)="onCategoriesCliked()">
-        <ion-icon name="backspace"></ion-icon>
+        Voltar
+        <!-- <ion-icon name="backspace"></ion-icon> -->
       </button>
     </ion-buttons>
   </ion-toolbar>

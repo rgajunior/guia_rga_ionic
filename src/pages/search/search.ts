@@ -17,14 +17,14 @@ export class SearchPage implements OnInit {
   }
 
   onInput(event: any) {
-    if (this.searchInput.trim().length >= 1) {
-      let modal = this.modalCtrl.create(ResultPage, { searchInput: this.searchInput });
+    // if (this.searchInput.trim().length >= 1) {
+    //   let modal = this.modalCtrl.create(ResultPage, { searchInput: this.searchInput });
 
-      modal.present();
-      modal.onWillDismiss(() => {
-        this.searchInput = '';
-      });
-    }
+    //   modal.present();
+    //   modal.onWillDismiss(() => {
+    //     this.searchInput = '';
+    //   });
+    // }
   }
 
   ngOnInit() {
@@ -35,5 +35,16 @@ export class SearchPage implements OnInit {
     let modal = this.modalCtrl.create(ResultPage, { category: category });
 
     modal.present();
+  }
+
+  onSearch(event: any) {
+    if (this.searchInput.trim().length >= 1) {
+      let modal = this.modalCtrl.create(ResultPage, { searchInput: this.searchInput });
+
+      modal.present();
+      modal.onWillDismiss(() => {
+        this.searchInput = '';
+      });
+    }
   }
 }

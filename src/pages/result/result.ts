@@ -24,10 +24,10 @@ export class ResultPage {
     console.log('ionViewDidLoad ResultPage');
   }
 
-  onInput(event: any) {
+  onSearch(event: any) {
     if (this.searchInput.trim().length == 0) {
       this.items = [];
-      this.viewCtrl.dismiss();
+      //this.viewCtrl.dismiss();
     }
     else {
       this.items = this.itemProvider.search(this.searchInput);
