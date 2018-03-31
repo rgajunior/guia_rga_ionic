@@ -16,17 +16,6 @@ export class SearchPage implements OnInit {
   constructor(private itemProvider: ItemProvider, private modalCtrl: ModalController) {
   }
 
-  onInput(event: any) {
-    // if (this.searchInput.trim().length >= 1) {
-    //   let modal = this.modalCtrl.create(ResultPage, { searchInput: this.searchInput });
-
-    //   modal.present();
-    //   modal.onWillDismiss(() => {
-    //     this.searchInput = '';
-    //   });
-    // }
-  }
-
   ngOnInit() {
     this.categories = this.itemProvider.getCategories();
   }
