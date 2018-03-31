@@ -1,3 +1,8 @@
+import { ResultPage } from './../pages/result/result';
+import { CallNumber } from '@ionic-native/call-number';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { SocialSharing } from '@ionic-native/social-sharing';
+
 import { ComponentsModule } from './../components/components.module';
 import { ItemComponent } from './../components/item/item';
 import { FavoritesPage } from './../pages/favorites/favorites';
@@ -28,7 +33,8 @@ import { ItemDetailPage } from '../pages/item-detail/item-detail';
     TabsPage,
     SearchPage,
     ItemDetailPage,
-    FavoritesPage
+    FavoritesPage,
+    ResultPage
   ],
   imports: [
     BrowserModule,
@@ -45,14 +51,18 @@ import { ItemDetailPage } from '../pages/item-detail/item-detail';
     TabsPage,
     SearchPage,
     ItemDetailPage,
-    FavoritesPage
+    FavoritesPage,
+    ResultPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ItemProvider,
-    TestProvider
+    TestProvider,
+    CallNumber,
+    LaunchNavigator,
+    SocialSharing,
   ]
 })
 export class AppModule {}

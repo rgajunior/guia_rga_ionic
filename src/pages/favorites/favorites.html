@@ -1,15 +1,37 @@
-<ion-header>
-    <ion-navbar color="primary">
-      <ion-title>Favoritos</ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-    <ion-list>
-      <button ion-item *ngFor="let item of favorites" (click)="onItemClick(item)">
-        <h2>{{item.name}}</h2>
-        <h3>{{item.address}}</h3>
-        <p>{{item.phoneList.join(", ")}}</p>
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <ion-title>Favoritos</ion-title>
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="menu"></ion-icon>
       </button>
-    </ion-list>
-  </ion-content>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button icon-only>
+        <ion-icon name="ribbon"></ion-icon>
+        <span style="font-size: 11px">Promoções</span>
+      </button>
+      <button ion-button icon-only>
+        <ion-icon name="calendar"></ion-icon>
+        <span style="font-size: 10px">Eventos</span>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-item *ngIf="favorites.length == 0" text-wrap text-center padding-right>
+    <p >Faça uma busca e adicione</p>
+    <p >os resultados aos seus favoritos.</p>
+  </ion-item>
+  <ion-list padding-right *ngIf="favorites.length > 0">
+    <button ion-item *ngFor="let item of favorites" (click)="onItemClick(item)">
+      <ion-thumbnail item-left *ngIf="item.logoImageUrl != ''">
+        <img [src]="item.logoImageUrl" [alt]="item.name">
+      </ion-thumbnail>
+      <ion-icon *ngIf="item.logoImageUrl == ''" [name]='item.category.icon' item-left> </ion-icon>
+      <h2 style="font-weight: bold">{{item.name}}</h2>
+      <p>{{item.address}}</p>
+      <h3>{{item.phoneList.join(", ")}}</h3>
+    </button>
+  </ion-list>
+</ion-content>

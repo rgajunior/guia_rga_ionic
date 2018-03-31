@@ -14,10 +14,6 @@ export class FavoritesPage {
   constructor(private modalCtrl: ModalController, private itemProvider: ItemProvider) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FavoritesPage');
-  }
-
   ionViewWillEnter() {
     this.favorites = this.itemProvider.getFavorites();
   }
@@ -27,6 +23,10 @@ export class FavoritesPage {
     const modal = this.modalCtrl.create(ItemDetailPage, item);
 
     modal.present();
+
+    modal.onWillDismiss(() => {
+      this.favorites = this.itemProvider.getFavorites();
+    });
   }
 
 }
